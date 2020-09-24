@@ -4,14 +4,14 @@ require 'predis/Autoloader.php';
 Predis\Autoloader::register();
 
 $sentinels = [];
-if (getenv['DATABASE_SERVICE_NAME']) {
-    $sentinels = [ 'tcp://'.getenv['DATABASE_SERVICE_NAME'] ];
+if (getenv("DATABASE_SERVICE_NAME")) {
+    $sentinels = [ 'tcp://'.getenv("DATABASE_SERVICE_NAME") ];
 }
 
 $options = [];
-if (getenv['REDIS_PASSWORD']) {
+if (getenv("REDIS_PASSWORD")) {
     $options['parameters'] = [
-        'password' => getenv['REDIS_PASSWORD']
+        'password' => getenv("REDIS_PASSWORD")
     ];
 }
 
